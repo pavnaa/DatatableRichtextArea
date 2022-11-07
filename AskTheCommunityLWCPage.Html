@@ -1,0 +1,21 @@
+<template>
+    <template if:true={displayModal}>
+        You dont have any active casegroups
+    </template>
+    
+    <template if:true={displayCommentModal}>
+       there is no comment for the selected group
+    </template>
+
+    <template if:true={displayQuestionModal}>
+        <lightning-datatable data={collaborationGroupFeedList} columns={mycolumns} key-field="Id" onrowaction={getSelectedName}>
+    </lightning-datatable>
+</template>
+
+    <template if:true={showCommentsModal}>
+        <c-my-custom-dataTable  data={collaborationGroupCommentList} 
+                                columns={commentcolumns} 
+                                key-field="Id" >
+        </c-my-custom-dataTable>
+    </template> 
+</template>
